@@ -1,0 +1,27 @@
+<%= content_tag :div, :id => id, :data => page_data do %>
+  <%= content_tag :header, :data => header_data do %>
+    <%= prev_page if defined?(prev_page) %>
+    <%= content_tag header_tag, title, :class => 'page-title' if defined? title %>
+    <%= next_page if defined?(next_page) %>
+    <%= content_tag :div, :'data-role' => :navbar do %>
+      <ul>
+        <% navbar_items.each do |item| %>
+          <%= content_tag :li, link_to(item[:body], item[:url], item[:options]) %>
+        <% end %>
+      </ul>
+    <% end if defined?(navbar_items) %>
+  <% end %>
+  
+  <%= content_tag :section, :data => content_data do %>
+    <%= yield %>
+  <% end %>  
+  
+  <%= content_tag :footer, :data => footer_data do %>
+    <div data-role="navbar">
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Hilfe', '#' %></li>
+      </ul>
+    </div>
+  <% end unless defined?(footer) and !footer %>
+<% end %>
