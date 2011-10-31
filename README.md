@@ -13,10 +13,12 @@ whether the the implementation of the `jqm_page` helper is good or bad.
     gem 'jqm-rails', :git => 'https://github.com/amiuhle/jqm-rails.git'
   
 In your CSS
+
     /*
      *= require jquery.mobile
     */
 In your JS
+
     //= require jquery.mobile
   
 
