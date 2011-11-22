@@ -25,6 +25,7 @@ In your JS
 ## Features
 
 jQuery Mobile page template:
+
     <%= jqm_page 'id', 
         :title => 'Hello, world!', 
         :prev_page => jqm_button_l('Back', 'href', :'data-direction' => 'reverse'),
@@ -35,9 +36,23 @@ jQuery Mobile page template:
     <% end %>
   
 Helpers:
+
     jqm_button 'Text', 'href'     #jQuery Mobile button
     jqm_button_l 'Left', 'href'   #jQuery Mobile button with :class => 'ui-btn-left', 'data-icon' => 'arrow-l', 'data-iconpos' => 'left'
     jqm_button_r 'Right', 'href'  #jQuery Mobile button with :class => 'ui-btn-right', 'data-icon' => 'arrow-r', 'data-iconpos' => 'right'
+    
+Analytics Integration
+
+Include the JavaScript file in your `application.js`:
+
+    //= require jquery.mobile.analytics
+    
+Provide your Analytics Tracker ID:
+
+    <body data-jqm-analytics-push='[["_setAccount", "UA-XXXXX-X"], ["_setDomainName", "mydomain.com"]]'>
+
+
+    
   
 ## TODOs
   - Make awesome
