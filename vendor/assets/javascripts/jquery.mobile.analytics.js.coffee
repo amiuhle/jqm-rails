@@ -3,7 +3,7 @@
 jQuery ->
   gaq = (window._gaq or= [])
   window.initial_push = $('body').jqmData('jqm-analytics-push')
-  gaq.push.apply this, initial_push
+  gaq.push.apply gaq, initial_push
   gaq.push(['_trackPageview'])
   
   # async
