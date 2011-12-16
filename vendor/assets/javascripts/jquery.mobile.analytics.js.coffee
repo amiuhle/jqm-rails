@@ -22,7 +22,7 @@ jQuery ->
       u ||= url.pathname
       if u then gaq.push(['_trackPageview', u]) else gaq.push(['_trackPageview'])
       
-  $(":jqmData(jqm-analytics-event)").live 'click', (event) ->
+  $(":jqmData(jqm-analytics-event)").live 'tap', (event) ->
     event_data = $(this).jqmData('jqm-analytics-event')
     event_data = ['_trackEvent'].concat(event_data) unless event_data?[0] is '_trackEvent'
     gaq.push event_data
