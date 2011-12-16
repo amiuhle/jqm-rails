@@ -3,7 +3,7 @@
     <%= prev_page if defined?(prev_page) %>
     <%= content_tag header_tag, title, :class => 'page-title' if defined? title %>
     <%= next_page if defined?(next_page) %>
-    <%= content_tag :div, :'data-role' => :navbar do %>
+    <%= content_tag :div, :data => { :role => :navbar } do %>
       <ul>
         <% navbar_items.each do |item| %>
           <%= content_tag :li, link_to(item[:body], item[:url], item[:options]) %>
@@ -17,11 +17,12 @@
   <% end %>  
   
   <%= content_tag :footer, :data => footer_data do %>
-    <div data-role="navbar">
+    <%= content_tag :div, :data => { :role => :navbar } do %>
       <ul>
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Hilfe', '#' %></li>
+        <% footer_items.each do |item| %>
+          <%= content_tag :li, link_to(item[:body], item[:url], item[:options]) %>
+        <% end %>
       </ul>
-    </div>
+    <% end if defined?(footer_items) %>
   <% end unless defined?(footer) and !footer %>
 <% end %>
