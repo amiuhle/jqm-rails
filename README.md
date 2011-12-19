@@ -49,7 +49,7 @@ Include the JavaScript file in your `application.js`:
     
 Provide your Analytics Tracker ID:
 
-    <body data-jqm-analytics-push='[["_setAccount", "UA-XXXXX-X"], ["_setDomainName", "mydomain.com"]]'>
+    <body data-jqm-analytics-push='[["_setAccount", "UA-XXXXXXX-YY"], ["_setDomainName", "mydomain.com"]]'>
 
 
     

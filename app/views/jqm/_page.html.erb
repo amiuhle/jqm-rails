@@ -17,12 +17,8 @@
   <% end %>  
   
   <%= content_tag :footer, :data => footer_data do %>
-    <%= content_tag :div, :data => { :role => :navbar } do %>
-      <ul>
-        <% footer_items.each do |item| %>
-          <%= content_tag :li, link_to(item[:body], item[:url], item[:options]) %>
-        <% end %>
-      </ul>
+    <% footer_items.each do |item| %>
+      <%= item %>
     <% end if defined?(footer_items) %>
   <% end unless defined?(footer) and !footer %>
 <% end %>
