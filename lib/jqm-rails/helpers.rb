@@ -43,5 +43,11 @@ module Jqm
       jqm_button body, url, options.merge(:class => 'ui-btn-right', 'data-icon' => 'arrow-r', 'data-iconpos' => 'right')
     end
     
+    def jqm_text_field object_name, method, label, options = {}, label_options = {}
+      content_tag :fieldset, :data => { :role => :fieldcontain } do
+        label(object_name, method, label, label_options) + text_field(object_name, method, options)
+      end
+    end
+    
   end
 end
